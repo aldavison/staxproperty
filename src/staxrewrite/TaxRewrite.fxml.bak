@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="staxrewrite.TaxRewriteController">
+  <children>
+    <SplitPane dividerPositions="0.449874686716792" focusTraversable="true" prefHeight="577.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <HBox prefHeight="24.0" prefWidth="356.0" />
+            <TableView fx:id="clientTable" prefHeight="575.0" prefWidth="356.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn id="" prefWidth="75.0" style="" text="Client" fx:id="clientList" />
+                <TableColumn prefWidth="75.0" text="Client Id" visible="false" fx:id="clientId" />
+                <TableColumn prefWidth="75.0" text="Email" visible="false" fx:id="email" />
+                <TableColumn prefWidth="75.0" text="State" visible="false" fx:id="state" />
+                <TableColumn prefWidth="75.0" text="City" visible="false" fx:id="city" />
+                <TableColumn prefWidth="75.0" text="County" visible="false" fx:id="countyColumn" />
+                <TableColumn prefWidth="75.0" text="Most Recent Year Filed" visible="false" fx:id="mostRecentYearFiled" />
+              </columns>
+            </TableView>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="593.0">
+          <children>
+            <SplitPane dividerPositions="0.24781849912739964" focusTraversable="true" orientation="VERTICAL" prefHeight="598.0" prefWidth="436.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="139.0" prefWidth="434.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <children>
+                        <TableView id="table" fx:id="clientInfoTable" editable="true" prefHeight="139.0" prefWidth="434.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Last Report Year" fx:id="lastReportYear" />
+                            <TableColumn prefWidth="75.0" text="Client No." fx:id="clientNo" />
+                            <TableColumn prefWidth="75.0" text="Client Name" fx:id="clientName" />
+                            <TableColumn prefWidth="75.0" text="County" fx:id="countyName" />
+                          </columns>
+                        </TableView>
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </AnchorPane>
+                <AnchorPane fx:id="details" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <Button fx:id="button" layoutX="365.0" layoutY="376.0" onAction="#handleButtonAction" text="Click Me!" />
+                    <HBox id="HBox" alignment="CENTER" layoutX="15.0" layoutY="3.0" spacing="5.0" />
+                    <TabPane prefHeight="378.0" prefWidth="434.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <tabs>
+                        <Tab fx:id="addClient" text="Add Client">
+                          <content>
+                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="434.0">
+                              <children>
+                                <Label layoutX="5.0" layoutY="40.0" text="Subscribing Company" />
+                                <Label layoutX="177.0" layoutY="176.0" text="State" />
+                                <Label layoutX="220.0" layoutY="176.0" text="Zip Code" />
+                                <Label layoutX="4.0" layoutY="131.0" text="Address Line 2" />
+                                <Label layoutX="3.0" layoutY="176.0" text="City" />
+                                <Label layoutX="5.0" layoutY="85.0" text="Address Line 1" />
+                                <TextField id="textCompanyName" fx:id="inputCompanyName" layoutX="5.0" layoutY="56.0" prefWidth="200.0" promptText="Type Company Name Here" />
+                                <TextField fx:id="inputAddrLine1" layoutX="4.0" layoutY="101.0" prefWidth="200.00009999999747" promptText="Type Address Line 1 Here" />
+                                <TextField fx:id="inputAddrLine2" layoutX="4.0" layoutY="147.0" prefWidth="200.0" promptText="Type Address Line 2 Here" />
+                                <TextField fx:id="inputCity" layoutX="3.0" layoutY="192.0" prefWidth="167.0" promptText="Type City Here" />
+                                <TextField fx:id="inputState" layoutX="176.0" layoutY="192.0" prefWidth="28.0" />
+                                <TextField fx:id="inputZipCode" layoutX="220.0" layoutY="192.0" prefWidth="159.0" promptText="XXXXX-XXXXX" />
+                                <TextField fx:id="inputTelephone" layoutX="3.0" layoutY="241.0" prefWidth="200.0" promptText="770-922-8954" />
+                                <Label layoutX="4.0" layoutY="225.0" text="Telephone" />
+                                <Button fx:id="saveClientButton" layoutX="2.0" layoutY="278.0" mnemonicParsing="false" text="Save" />
+                                <Label fx:id="messageBar" layoutX="-1.0" layoutY="9.0" prefHeight="21.0" prefWidth="423.0" />
+                              </children>
+                            </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="addEditAssets" text="Add/Edit Assets">
+                          <content>
+                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                <TableView editable="true" layoutY="35.0" prefHeight="94.0" prefWidth="406.0" tableMenuButtonVisible="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                                  <columns>
+                                    <TableColumn prefWidth="75.0" text="Return Year" fx:id="assetReturnYear" />
+                                    <TableColumn prefWidth="75.0" text="Asset Title" fx:id="assetTitle" />
+                                    <TableColumn prefWidth="75.0" text="Asset ID" fx:id="assetId" />
+                                    <TableColumn prefWidth="75.0" text="Desctiption" />
+                                    <TableColumn prefWidth="75.0" text="Cost" />
+                                    <TableColumn prefWidth="75.0" text="County Number" visible="false" />
+                                    <TableColumn prefWidth="75.0" text="Aquired Date" visible="false" />
+                                    <TableColumn prefWidth="75.0" text="Disposed Date" visible="false" />
+                                  </columns>
+                                </TableView>
+                                <Label id="Assets" fx:id="assetsMessageBar" layoutX="14.0" layoutY="6.0" prefHeight="24.0" prefWidth="406.0" />
+                                <Label layoutX="164.0" layoutY="133.0" prefHeight="24.0" prefWidth="145.0" text="Add Asset" />
+                                <TextField layoutX="14.0" layoutY="272.0" prefWidth="150.0" promptText="Type Disposed Date Here" />
+                                <TextField layoutX="14.0" layoutY="318.0" prefWidth="150.0" promptText="Ex. 123Desc" />
+                                <TextField layoutX="14.0" layoutY="226.0" prefWidth="150.0" promptText="Type Description Here" />
+                                <TextField layoutX="193.0" layoutY="318.0" prefWidth="150.0" promptText="Type Category Here" />
+                                <TextField layoutX="11.0" layoutY="362.0" prefWidth="150.0" promptText="change to drop down true or false" />
+                                <TextField layoutX="193.0" layoutY="272.0" prefWidth="150.0" promptText="Type Disposed Method Here" />
+                                <Button id="saveAsset" fx:id="saveAssetButton" layoutX="375.0" layoutY="373.0" mnemonicParsing="false" text="Save" />
+                                <TextField layoutX="193.0" layoutY="226.0" prefWidth="150.0" promptText="Type Cost Here" />
+                                <TextField layoutX="193.0" layoutY="362.0" prefWidth="150.0" promptText="Enter County push button get no." />
+                                <TextField layoutX="193.0" layoutY="182.0" prefWidth="150.0" promptText="Type Asset Title Here" />
+                                <TextField layoutX="14.0" layoutY="182.0" prefWidth="150.0" promptText="Type Return Year Here" />
+                                <Label layoutX="56.0" layoutY="166.0" prefHeight="21.0" prefWidth="148.0" text="Return Year" />
+                                <Label fx:id="assetDescription" layoutX="56.0" layoutY="210.0" prefWidth="98.0" text="Description" />
+                                <Label layoutX="56.0" layoutY="256.0" text="Disposd Date" />
+                                <Label layoutX="56.0" layoutY="302.0" prefWidth="57.0" text="assetID" />
+                                <Label layoutX="56.0" layoutY="343.0" prefWidth="59.0" text="disposed" />
+                                <Label layoutX="237.0" layoutY="166.0" prefWidth="91.0" text="Asset Title" />
+                                <Label layoutX="243.0" layoutY="210.0" prefWidth="50.0" text="Cost" />
+                                <Label layoutX="237.0" layoutY="256.0" prefWidth="120.0" text="Disposed Method" />
+                                <Label layoutX="237.0" layoutY="302.0" prefWidth="82.0" text="category" />
+                                <Label layoutX="237.0" layoutY="343.0" prefWidth="79.0" text="countyNo." />
+                              </children>
+                            </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Untitled Tab">
+                          <content>
+                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                      </tabs>
+                    </TabPane>
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <HBox id="HBox" alignment="CENTER" layoutY="-1.0" prefWidth="800.0" spacing="5.0">
+      <children>
+        <MenuBar prefWidth="807.0" HBox.hgrow="ALWAYS">
+          <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <Menu mnemonicParsing="false" text="Sales &amp; Use Tax Returns">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Enter, Edit , Print Returns" />
+                    <Menu mnemonicParsing="false" text="Print/ Preview Returns">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="By Client" />
+                        <MenuItem mnemonicParsing="false" text="By Reporting Period" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Bulk File EFT">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="Select Returns to File" />
+                        <MenuItem mnemonicParsing="false" text="Unselect Rejected Returns" />
+                      </items>
+                    </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Property Tax Returns">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2013" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2012" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2011" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2010" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2009" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2008" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2007" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2006" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2005" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2004" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2003" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2002" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2001" />
+                    <MenuItem mnemonicParsing="false" text="Tax Year 2000" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Client Records">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="List Clients" />
+                    <MenuItem mnemonicParsing="false" text="Select By Number" />
+                    <MenuItem mnemonicParsing="false" text="Add New Client" />
+                  </items>
+                </Menu>
+                <MenuItem mnemonicParsing="false" text="County File Maintenance" />
+                <MenuItem mnemonicParsing="false" text="Exit" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="System">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Setup Information" />
+                <MenuItem mnemonicParsing="false" text="Change Date" />
+                <MenuItem mnemonicParsing="false" text="Change Client No." />
+                <MenuItem mnemonicParsing="false" text="Reset User Count" />
+                <MenuItem mnemonicParsing="false" text="Edit User File" />
+                <MenuItem mnemonicParsing="false" text="Reassign User I.D." />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Utilities">
+              <items>
+                <MenuItem mnemonicParsing="false" text="1. Reindex Data Files" />
+                <MenuItem mnemonicParsing="false" text="2. Delete Returns" />
+                <MenuItem mnemonicParsing="false" text="3. Backup Data Files" />
+                <MenuItem mnemonicParsing="false" text="4. Restore Data Files" />
+                <MenuItem mnemonicParsing="false" text="5. Append Data Files" />
+                <MenuItem mnemonicParsing="false" text="6. Data Directory integrity Check" />
+                <MenuItem mnemonicParsing="false" text="7. User Configuration" />
+                <MenuItem mnemonicParsing="false" text="8. Finacial Calculator" />
+                <MenuItem mnemonicParsing="false" text="Update Assessors" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Report">
+              <items>
+                <Menu mnemonicParsing="false" text="Client Listing">
+                  <items>
+                    <Menu mnemonicParsing="false" text="All (Client Listing Only)">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Sales Tax Clients">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Property Tax Clients">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                      </items>
+                    </Menu>
+                    <MenuItem mnemonicParsing="false" text="Client Sales Summary" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Print Returns">
+                  <items>
+                    <Menu mnemonicParsing="false" text="Sales Tax">
+                      <items>
+                        <Menu mnemonicParsing="false" text="By Client">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="By Reporting Period">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                          </items>
+                        </Menu>
+                      </items>
+                    </Menu>
+                    <MenuItem mnemonicParsing="false" text="Property Tax" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="County Tax List">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Sales Tax Rate" />
+                  </items>
+                </Menu>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Exit">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Quit S-TaxPro" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="About S-TaxPro" />
+                <MenuItem mnemonicParsing="false" text="If Help Does Not Work" />
+                <MenuItem mnemonicParsing="false" text="Getting Started" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>
