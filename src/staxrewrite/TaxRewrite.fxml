@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="staxrewrite.TaxRewriteController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="staxrewrite.TaxRewriteController">
   <children>
     <SplitPane dividerPositions="0.449874686716792" focusTraversable="true" prefHeight="577.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
       <items>
@@ -104,10 +104,10 @@
                                 <TextField layoutX="193.0" layoutY="226.0" prefWidth="150.0" promptText="Type Cost Here" />
                                 <TextField layoutX="193.0" layoutY="362.0" prefWidth="150.0" promptText="Enter County push button get no." />
                                 <TextField layoutX="193.0" layoutY="182.0" prefWidth="150.0" promptText="Type Asset Title Here" />
-                                <TextField layoutX="14.0" layoutY="182.0" prefWidth="150.0" promptText="Type Return Year Here" />
+                                <TextField layoutX="14.0" layoutY="182.0" prefWidth="150.0" promptText="Type Return Year Here" text="2014" />
                                 <Label layoutX="56.0" layoutY="166.0" prefHeight="21.0" prefWidth="148.0" text="Return Year" />
                                 <Label fx:id="assetDescription" layoutX="56.0" layoutY="210.0" prefWidth="98.0" text="Description" />
-                                <Label layoutX="56.0" layoutY="256.0" text="Disposd Date" />
+                                <Label layoutX="56.0" layoutY="256.0" text="Disposed Date" />
                                 <Label layoutX="56.0" layoutY="302.0" prefWidth="57.0" text="assetID" />
                                 <Label layoutX="56.0" layoutY="343.0" prefWidth="59.0" text="disposed" />
                                 <Label layoutX="237.0" layoutY="166.0" prefWidth="91.0" text="Asset Title" />
